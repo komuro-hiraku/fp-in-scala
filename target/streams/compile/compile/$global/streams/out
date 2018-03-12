@@ -1,0 +1,4 @@
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\hcomc\IdeaProjects\FpInScala\src\main\scala\chapter4\Validated.scala:41:47: unreachable code[0m
+[0m[[0m[33mwarn[0m] [0m[0m    case (Invalid(e1), Invalid(e2)) => Invalid(e1 ++ e2)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                              ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
