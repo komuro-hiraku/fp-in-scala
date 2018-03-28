@@ -1,5 +1,7 @@
 package chapter6
 
+import chapter5.Stream
+
 trait RNG {
   def nextInt: (Int, RNG)
 }
@@ -58,7 +60,26 @@ object RNG {
     ((d, i), ir)
   }
 
-  def double3(rng: RNG): ((Double, Double, Double), RNG) = ???
+  def double3(rng: RNG): ((Double, Double, Double), RNG) = {
+    val (d1, dr1) = double(rng)
+    val (d2, dr2) = double(dr1)
+    val (d3, dr3) = double(dr2)
+    ((d1, d2, d3), dr3)
+  }
+
+  /** Exercise 6.4 */
+  def ints(count: Int)(rng: RNG): (List[Int], RNG) = {
+
+    val emptyList: List[Int] = List.empty
+    def loop(current: Int, innerRng:RNG, list: List[Int]): (List[Int], RNG) = {
+      if (current < 0) (list, innerRng)
+      else {
+        val (i, r) = innerRng.nextInt
+        loop(current - 1, r, i :: list)
+      }
+    }
+    loop(count, rng, emptyList)
+  }
 
 }
 
