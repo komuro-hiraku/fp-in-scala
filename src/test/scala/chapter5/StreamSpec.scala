@@ -1,6 +1,6 @@
 package chapter5
 
-import org.scalatest.{FlatSpec, MustMatchers, WordSpec}
+import org.scalatest.{MustMatchers, WordSpec}
 
 class StreamSpec extends WordSpec with MustMatchers {
 
